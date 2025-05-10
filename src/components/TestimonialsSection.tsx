@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -26,10 +26,37 @@ const testimonials = [
     text: "Definitely attending again next year!",
     avatar: AvatarImg,
   },
+  {
+    name: "Fatima Musa",
+    text: "I met so many amazing people here!",
+    avatar: AvatarImg,
+  },
+  {
+    name: "Daniel Obi",
+    text: "The speakers were insightful and motivating.",
+    avatar: AvatarImg,
+  },
 ];
 
 export default function AttendeeTestimonials() {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef(null);
+  const [startIndex, setStartIndex] = useState(0);
+  const visibleCount = 3;
+
+  const handleNext = () => {
+    setStartIndex((prev) => (prev + visibleCount) % testimonials.length);
+  };
+
+  const handlePrev = () => {
+    setStartIndex((prev) =>
+      (prev - visibleCount + testimonials.length) % testimonials.length
+    );
+  };
+
+  const visibleTestimonials = testimonials.slice(
+    startIndex,
+    startIndex + visibleCount
+  );
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -52,7 +79,7 @@ export default function AttendeeTestimonials() {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [startIndex]);
 
   return (
     <section
@@ -69,17 +96,23 @@ export default function AttendeeTestimonials() {
           </p>
         </div>
 
-        <div className="flex justify-center gap-4 mb-8 sm:absolute sm:top-4 sm:right-4">
-          <button className="p-2 border-2 border-[#E2A7F7] rounded-full hover:bg-gray-300 transition">
-            <FaArrowLeft className="text-black" size={16} />
+        <div className="flex justify-center gap-6 mb-8 sm:absolute sm:top-4 sm:right-4">
+          <button
+            onClick={handlePrev}
+            className="p-3 border-2 border-[#E2A7F7] rounded-full hover:bg-gray-300 transition"
+          >
+            <FaArrowLeft className="text-black" size={24} />
           </button>
-          <button className="p-2 border-2 border-[#E2A7F7] rounded-full hover:bg-gray-300 transition">
-            <FaArrowRight className="text-black" size={16} />
+          <button
+            onClick={handleNext}
+            className="p-3 border-2 border-[#E2A7F7] rounded-full hover:bg-gray-300 transition"
+          >
+            <FaArrowRight className="text-black" size={24} />
           </button>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {testimonials.map((user, index) => (
+          {visibleTestimonials.map((user, index) => (
             <div key={index} className="testimonial-card text-center p-4">
               <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-4 border-purple-500 mx-auto mb-6 overflow-hidden">
                 <Image
