@@ -50,32 +50,33 @@ const RegisterSection = () => {
           Join our community of over 1000+ founders, developers, and tech junkies in general. Be inspired by people who live to inspire!
         </p>
 
-        <div className="relative w-full flex justify-center items-center mb-12">
-  <Image
-    src={Vector}
-    alt="Vector Line"
-    className="register-animate w-full max-w-[1200px] h-auto object-contain"
-    width={1200}
-    height={100}
-    priority
-  />
-  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[65%] w-full flex justify-center">
+     
+<div className="relative w-full justify-center items-center mb-12 hidden md:flex" style={{ marginTop: 150}}>
+
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
+    <Image
+      src={Vector}
+      alt="Vector Line"
+      width={1600}
+      height={100}
+      className="register-animate w-full h-auto object-contain"
+      style={{ minWidth: 1800 }}
+    />
+  </div>
+
+ 
+  <div className="relative z-10 mt-[-100px]">
     <Image
       src={Community}
       alt="Community Avatars"
-      className="register-animate w-full max-w-[1000px] object-contain"
-      width={1000}
+      width={1600}
       height={100}
-      priority
+      className="register-animate w-full h-auto object-contain"
+      style={{ minWidth: 1400 }}
     />
   </div>
 </div>
 
-<div className="register-animate flex justify-center">
-  <button className="mt-4 px-6 md:px-12 py-3 rounded-full border border-purple-500 text-purple-600 font-semibold hover:bg-purple-50 transition flex items-center gap-2">
-    Register Now <FaArrowRight className="text-xl" />
-  </button>
-</div>
 
 
         <div className="register-animate flex justify-center">
