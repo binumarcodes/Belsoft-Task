@@ -55,40 +55,43 @@ const LearningExperience = () => {
 
   return (
     <section
-      ref={sectionRef}
-      className="bg-[#FEF6FF] py-20 px-6 md:px-12 lg:px-24 border-b"
-    >
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-16">
-        <div className="learn-img relative w-full h-80 md:h-[420px]">
-          <Image
-            src={LearningExperienceImage}
-            alt="Who We Are"
-            fill
-            className="object-contain"
-            priority
-          />
-        </div>
+  ref={sectionRef}
+  className="bg-[#FEF6FF] py-20 px-6 md:px-12 lg:px-24 border-b"
+>
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12 md:gap-16">
+    {/* Image Section */}
+    <div className="learn-img relative w-full h-64 sm:h-80 md:h-[420px]">
+      <Image
+        src={LearningExperienceImage}
+        alt="Learning Experience"
+        fill
+        className="object-contain"
+        priority
+      />
+    </div>
 
-        <div className="learn-text">
-          <p className="text-gray-700 mb-5 leading-relaxed font-semibold text-xl">
-            At Founder’s Friday, Every Friday Is a Learning Experience!
-          </p>
-          <p className="text-gray-700 mb-8 leading-relaxed font-semibold text-base md:text-lg">
-            Join us in our mission to transform ideas into impact and shape the future of Nigeria’s startup landscape.
-          </p>
+    {/* Text Section */}
+    <div className="learn-text">
+      <p className="text-gray-700 mb-4 leading-relaxed font-semibold text-lg sm:text-xl">
+        At Founder’s Friday, Every Friday Is a Learning Experience!
+      </p>
+      <p className="text-gray-700 mb-8 leading-relaxed font-semibold text-base sm:text-lg">
+        Join us in our mission to transform ideas into impact and shape the future of Nigeria’s startup landscape.
+      </p>
 
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/register"
-              className="inline-flex items-center gap-2 px-12 py-3 bg-[#8300FF] text-white rounded-full hover:bg-[#6b00cc] transition font-medium"
-            >
-              Register
-              <FaArrowRight className="text-sm" />
-            </Link>
-          </div>
-        </div>
+      <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4">
+        <Link
+          href="/register"
+          className="inline-flex items-center justify-center gap-2 px-10 py-3 bg-[#8300FF] text-white rounded-full hover:bg-[#6b00cc] transition font-medium text-sm sm:text-base"
+        >
+          Register
+          <FaArrowRight className="text-sm" />
+        </Link>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
   );
 };
 

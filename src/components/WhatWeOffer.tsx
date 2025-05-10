@@ -72,30 +72,29 @@ const WhatWeOffer = () => {
 
         <div className="space-y-6">
           {offerings.map((item, index) => (
-            <div
-              key={index}
-              ref={(el) => {
-  itemRefs.current[index] = el;
-}}
+           <div
+  key={index}
+  ref={(el) => {
+    itemRefs.current[index] = el;
+  }}
+  className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-6 border-b border-[#3C3641] hover:shadow-md transition opacity-0"
+>
+  <div className="flex items-start gap-4 w-full">
+    <div className="w-3 h-3 rounded-full bg-[#8300FF] mt-1 md:mt-2" />
+    <div className="flex flex-col w-full">
+      <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-1">
+        {item.title}
+      </h3>
+      <p className="text-gray-700 text-sm md:text-base">
+        {item.description}
+      </p>
+    </div>
+  </div>
+  <div className="self-end md:self-center">
+    <FaPlus className="text-gray-400 text-lg md:text-xl" />
+  </div>
+</div>
 
-              className="flex items-center justify-between p-6 border-b border-[#3C3641] hover:shadow-md transition opacity-0"
-            >
-              <div className="flex items-center gap-4 w-full">
-                <div className="w-3 h-3 rounded-full bg-[#8300FF]" />
-                <div className="flex items-center justify-between w-full gap-6">
-                  <h3 className="text-lg font-semibold text-gray-900 whitespace-nowrap">
-                    {item.title}:
-                  </h3>
-                  <p className="text-gray-700 text-sm md:text-base w-full max-w-3xl">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-              <FaPlus
-                className="text-gray-400 text-sm md:text-lg ml-4"
-                size={25}
-              />
-            </div>
           ))}
         </div>
       </div>

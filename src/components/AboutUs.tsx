@@ -67,12 +67,13 @@ const AboutUs = () => {
         </div>
 
         <div ref={textRef} className="relative">
-          <Image
-            src={Line1}
-            alt="Line"
-            className="absolute top-0 -left-10 h-[435px] object-contain"
-            priority
-          />
+         <Image
+  src={Line1}
+  alt="Line"
+  className="hidden md:block absolute top-0 -left-10 h-[435px] object-contain"
+  priority
+/>
+
 
           <h2 className="fade-up text-4xl font-bold text-gray-900 mb-6 leading-tight">
             Who Are We?
@@ -84,22 +85,23 @@ const AboutUs = () => {
             ideas, and foster collaboration.
           </p>
 
-          <div className="fade-up flex flex-wrap gap-4 mt-[49px] mb-[121px]">
-            <Link
-              href="/register"
-              className="inline-flex items-center justify-center gap-2 w-[190px] h-[55px] px-6 py-3 bg-[#8300FF] text-white rounded-[40px] hover:bg-[#6b00cc] transition"
-            >
-              Register
-              <FaArrowRight className="text-sm" />
-            </Link>
-            <Link
-              href="/donate"
-              className="inline-flex items-center justify-center gap-2 w-[190px] h-[55px] px-6 py-3 border border-[#8300FF] text-[#8300FF] rounded-[40px] hover:bg-[#f5eaff] transition"
-            >
-              Donate
-              <FaHandHoldingHeart className="text-sm" />
-            </Link>
-          </div>
+          <div className="fade-up flex flex-wrap md:flex-row justify-between md:justify-start md:gap-4 mt-[49px] mb-[121px]">
+  <Link
+    href="/register"
+    className="w-[48%] md:w-[190px] h-[55px] inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#8300FF] text-white rounded-[40px] hover:bg-[#6b00cc] transition"
+  >
+    Register
+    <FaArrowRight className="text-sm" />
+  </Link>
+  <Link
+    href="/donate"
+    className="w-[48%] md:w-[190px] h-[55px] inline-flex items-center justify-center gap-2 px-6 py-3 border border-[#8300FF] text-[#8300FF] rounded-[40px] hover:bg-[#f5eaff] transition"
+  >
+    Donate
+    <FaHandHoldingHeart className="text-sm" />
+  </Link>
+</div>
+
 
           <h4 className="fade-up text-[18px] font-bold text-gray-900 leading-tight">
             Founder's Friday is more than just a meetup — it's a movement.

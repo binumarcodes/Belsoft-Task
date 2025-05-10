@@ -55,42 +55,48 @@ export default function AttendeeTestimonials() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#FEF6FF] py-12 px-4 relative">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-4">
-          <h2 className="text-3xl font-bold text-black">
+    <section
+      ref={sectionRef}
+      className="w-full bg-[#FEF6FF] py-16 px-4 sm:px-6 lg:px-12 relative"
+    >
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-10 px-2">
+          <h2 className="text-2xl sm:text-3xl font-bold text-black">
             What Do Our Attendees Have To Say?
           </h2>
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-600 mt-2 text-sm sm:text-base">
             See what people are saying about us
           </p>
         </div>
 
-        <div className="absolute top-4 right-4 flex gap-2">
-          <button className="p-2 border-2 border-[#E2A7F7] rounded-full hover:bg-gray-300">
+        <div className="flex justify-center gap-4 mb-8 sm:absolute sm:top-4 sm:right-4">
+          <button className="p-2 border-2 border-[#E2A7F7] rounded-full hover:bg-gray-300 transition">
             <FaArrowLeft className="text-black" size={16} />
           </button>
-          <button className="p-2 border-2 border-[#E2A7F7] rounded-full hover:bg-gray-300">
+          <button className="p-2 border-2 border-[#E2A7F7] rounded-full hover:bg-gray-300 transition">
             <FaArrowRight className="text-black" size={16} />
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-10">
-  {testimonials.map((user, index) => (
-    <div key={index} className="testimonial-card text-center">
-      <div className="w-40 h-40 rounded-full border-4 border-purple-500 mx-auto mb-6 flex items-center justify-center">
-        <Image
-          src={user.avatar}
-          alt={user.name}
-          className="w-36 h-36 rounded-full object-cover"
-        />
-      </div>
-      <h3 className="text-2xl font-semibold text-black">{user.name}</h3>
-      <p className="text-lg text-gray-700 mt-4 max-w-md mx-auto">{user.text}</p>
-    </div>
-  ))}
-</div>
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {testimonials.map((user, index) => (
+            <div key={index} className="testimonial-card text-center p-4">
+              <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-4 border-purple-500 mx-auto mb-6 overflow-hidden">
+                <Image
+                  src={user.avatar}
+                  alt={user.name}
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-black">
+                {user.name}
+              </h3>
+              <p className="text-sm sm:text-base text-gray-700 mt-4 max-w-md mx-auto">
+                {user.text}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

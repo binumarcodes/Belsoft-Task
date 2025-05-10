@@ -51,25 +51,32 @@ const RegisterSection = () => {
         </p>
 
         <div className="relative w-full flex justify-center items-center mb-12">
-          <Image
-            src={Vector}
-            alt="Vector Line"
-            width={900}
-            height={100}
-            className="register-animate w-full max-w-5xl h-auto object-contain"
-            style={{ minWidth: 1800 }}
-          />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[65%]">
-            <Image
-              src={Community}
-              alt="Community Avatars"
-              width={1400}
-              height={100}
-              className="register-animate object-contain w-auto h-auto"
-              style={{ minWidth: 1400 }}
-            />
-          </div>
-        </div>
+  <Image
+    src={Vector}
+    alt="Vector Line"
+    className="register-animate w-full max-w-[1200px] h-auto object-contain"
+    width={1200}
+    height={100}
+    priority
+  />
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[65%] w-full flex justify-center">
+    <Image
+      src={Community}
+      alt="Community Avatars"
+      className="register-animate w-full max-w-[1000px] object-contain"
+      width={1000}
+      height={100}
+      priority
+    />
+  </div>
+</div>
+
+<div className="register-animate flex justify-center">
+  <button className="mt-4 px-6 md:px-12 py-3 rounded-full border border-purple-500 text-purple-600 font-semibold hover:bg-purple-50 transition flex items-center gap-2">
+    Register Now <FaArrowRight className="text-xl" />
+  </button>
+</div>
+
 
         <div className="register-animate flex justify-center">
           <button className="mt-4 px-6 py-3 rounded-full border border-purple-500 text-purple-600 font-semibold hover:bg-purple-50 transition flex items-center gap-2" style={{ paddingRight: 50, paddingLeft: 50 }}>
