@@ -27,7 +27,7 @@ const testimonials = [
     avatar: AvatarImg,
   },
   {
-    name: "Fatima Musa",
+    name: "Kola Joshua",
     text: "I met so many amazing people here!",
     avatar: AvatarImg,
   },
