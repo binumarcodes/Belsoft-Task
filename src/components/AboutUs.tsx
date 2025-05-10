@@ -4,7 +4,7 @@ import Image from "next/image";
 import aboutUSImage from "../assets/about_us.png";
 import Line1 from "../assets/Line 1.png";
 import Link from "next/link";
-import { FaArrowRight, FaHandHoldingHeart, FaMoneyBillWave } from "react-icons/fa";
+import { FaArrowRight, FaHandHoldingHeart } from "react-icons/fa";
 
 
 const AboutUs = () => {

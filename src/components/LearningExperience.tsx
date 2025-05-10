@@ -3,7 +3,7 @@
 import Image from "next/image";
 import LearningExperienceImage from "../assets/Frame 26.jpg";
 import Link from "next/link";
-import { FaArrowRight, FaHandHoldingHeart, FaMoneyBillWave } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 
 
 const LearningExperience = () => {

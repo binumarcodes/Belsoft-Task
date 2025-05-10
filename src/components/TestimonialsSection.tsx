@@ -1,3 +1,5 @@
+"use client";
+
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import AvatarImg from "../assets/avatar1.png";
 import Image from "next/image";
