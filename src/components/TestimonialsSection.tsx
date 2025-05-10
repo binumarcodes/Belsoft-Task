@@ -114,7 +114,7 @@ export default function AttendeeTestimonials() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {visibleTestimonials.map((user, index) => (
             <div key={index} className="testimonial-card text-center p-4">
-              <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-4 border-purple-500 mx-auto mb-6 overflow-hidden">
+<div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-4 border-purple-500 mx-auto mb-6 overflow-hidden p-2">
                 <Image
                   src={user.avatar}
                   alt={user.name}
