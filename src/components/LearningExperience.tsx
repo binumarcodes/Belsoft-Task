@@ -4,8 +4,7 @@ import Image from "next/image";
 import LearningExperienceImage from "../assets/Frame 26.jpg";
 import Link from "next/link";
 import { FaArrowRight, FaHandHoldingHeart, FaMoneyBillWave } from "react-icons/fa";
-import { MdMoney } from "react-icons/md";
-import { PiMoney } from "react-icons/pi";
+
 
 const LearningExperience = () => {
   return (

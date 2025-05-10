@@ -7,7 +7,6 @@ import Navbar from "@/components/Navbar";
 import RegisterSection from "@/components/RegisterSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import WhatWeOffer from "@/components/WhatWeOffer";
-import Image from "next/image";
 
 export default function Home() {
   return (

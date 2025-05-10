@@ -2,10 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import HeroImage1 from "../assets/Frame 16.png"; // Replace with correct image
-import HeroImage2 from "../assets/Frame 17.png"; // Replace with correct image
-import HeroImage3 from "../assets/Frame 20.png"; // Replace with correct image
-import HeroImage4 from "../assets/Frame 22.png"; // Replace with correct image
+
 import Group3 from "../assets/Group 3.png"
 import Ellipse3 from "../assets/Ellipse 3.png"; // Example logos
 import Ellipse1 from "../assets/Ellipse 1.png";

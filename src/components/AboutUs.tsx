@@ -5,8 +5,7 @@ import aboutUSImage from "../assets/about_us.png";
 import Line1 from "../assets/Line 1.png";
 import Link from "next/link";
 import { FaArrowRight, FaHandHoldingHeart, FaMoneyBillWave } from "react-icons/fa";
-import { MdMoney } from "react-icons/md";
-import { PiMoney } from "react-icons/pi";
+
 
 const AboutUs = () => {
   return (

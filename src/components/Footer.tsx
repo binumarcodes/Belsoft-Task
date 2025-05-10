@@ -1,6 +1,6 @@
 "use client";
 
-import { FaArrowRight, FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 import Logo from "../assets/logo.png"
 import Image from "next/image";
