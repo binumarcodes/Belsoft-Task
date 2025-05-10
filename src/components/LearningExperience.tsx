@@ -56,7 +56,7 @@ const LearningExperience = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b"
+      className="bg-[#FEF6FF] py-20 px-6 md:px-12 lg:px-24 border-b"
     >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-16">
         <div className="learn-img relative w-full h-80 md:h-[420px]">

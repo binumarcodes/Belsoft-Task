@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
   {
-    name: "Jane Doe",
+    name: "Mr Belba Ngoy",
     text: "Always a remarkable experience for my team and myself.",
     avatar: AvatarImg,
   },
@@ -55,7 +55,7 @@ export default function AttendeeTestimonials() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white py-12 px-4 relative">
+    <section ref={sectionRef} className="w-full bg-[#FEF6FF] py-12 px-4 relative">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-4">
           <h2 className="text-3xl font-bold text-black">
@@ -76,20 +76,21 @@ export default function AttendeeTestimonials() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-10">
-          {testimonials.map((user, index) => (
-            <div key={index} className="testimonial-card text-center">
-              <div className="w-32 h-32 rounded-full border-4 border-purple-500 mx-auto mb-4 flex items-center justify-center">
-                <Image
-                  src={user.avatar}
-                  alt={user.name}
-                  className="w-28 h-28 rounded-full object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-semibold text-black">{user.name}</h3>
-              <p className="text-gray-600 mt-2 max-w-xs mx-auto">{user.text}</p>
-            </div>
-          ))}
-        </div>
+  {testimonials.map((user, index) => (
+    <div key={index} className="testimonial-card text-center">
+      <div className="w-40 h-40 rounded-full border-4 border-purple-500 mx-auto mb-6 flex items-center justify-center">
+        <Image
+          src={user.avatar}
+          alt={user.name}
+          className="w-36 h-36 rounded-full object-cover"
+        />
+      </div>
+      <h3 className="text-2xl font-semibold text-black">{user.name}</h3>
+      <p className="text-lg text-gray-700 mt-4 max-w-md mx-auto">{user.text}</p>
+    </div>
+  ))}
+</div>
+
       </div>
     </section>
   );
