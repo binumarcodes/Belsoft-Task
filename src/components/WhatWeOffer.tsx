@@ -1,6 +1,11 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { FaPlus } from "react-icons/fa";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const offerings = [
   {
@@ -31,10 +36,36 @@ const offerings = [
 ];
 
 const WhatWeOffer = () => {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    gsap.fromTo(
+      itemRefs.current,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section className="bg-[#FDF7FF] py-20 px-6 md:px-12 lg:px-24 border-t border-b">
+    <section
+      ref={sectionRef}
+      className="bg-[#FDF7FF] py-20 px-6 md:px-12 lg:px-24 border-y border-[#3C3641]"
+    >
       <div className="max-w-6xl mx-auto">
-        {/* Fixed broken class/style mix */}
         <h2 className="text-4xl font-bold text-center mb-12 text-black">
           What We Offer
         </h2>
@@ -43,17 +74,14 @@ const WhatWeOffer = () => {
           {offerings.map((item, index) => (
             <div
               key={index}
-              className="flex items-center justify-between p-6 hover:shadow-md transition"
-              style={{
-                borderBottomWidth: 1,
-                borderBottomColor: "#3C3641",
-              }}
+              ref={(el) => {
+  itemRefs.current[index] = el;
+}}
+
+              className="flex items-center justify-between p-6 border-b border-[#3C3641] hover:shadow-md transition opacity-0"
             >
               <div className="flex items-center gap-4 w-full">
-                {/* Purple dot */}
                 <div className="w-3 h-3 rounded-full bg-[#8300FF]" />
-
-                {/* Title and centered description */}
                 <div className="flex items-center justify-between w-full gap-6">
                   <h3 className="text-lg font-semibold text-gray-900 whitespace-nowrap">
                     {item.title}:
@@ -63,9 +91,10 @@ const WhatWeOffer = () => {
                   </p>
                 </div>
               </div>
-
-              {/* Plus icon */}
-              <FaPlus className="text-gray-400 text-sm md:text-lg ml-4" size={25} />
+              <FaPlus
+                className="text-gray-400 text-sm md:text-lg ml-4"
+                size={25}
+              />
             </div>
           ))}
         </div>
